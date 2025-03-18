@@ -1,14 +1,14 @@
 <template>
   <div id="content">
 
-    <temp/>
+    <ExpensesChartComponent/>
     
   </div>
 </template>
 
 <script setup>
 
-  import temp from './components/temp.vue';
+  import ExpensesChartComponent from './components/ExpensesChartComponent.vue';
 
 </script>
 
