@@ -1,12 +1,28 @@
 <template>
   
   <div class="day">
-    <p>Mon</p>
-    <div class="pillar" style="height: 20%" ></div>
-    <div class="amount"><p>$69</p></div>
+
+    <p>{{ barData.weekDay }}</p>
+    <div :class="barData.pillarType" :style="{ height: barData.height }" ></div>
+    <div class="amount"><p>{{ barData.amount }}</p></div>
   </div>
   
 </template>
+
+<script setup>
+
+  import { defineProps } from 'vue';
+
+  defineProps({
+
+    barData: {
+      type: Object,
+      required: true,
+    },
+
+  });
+
+</script>
 
 <style>
   .day {
