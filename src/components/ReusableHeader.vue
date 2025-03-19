@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   
-  <h2>{{ msg }}</h2>
+  <h2 style="margin: 0;">{{ msg }}</h2>
   
 </template>
 
