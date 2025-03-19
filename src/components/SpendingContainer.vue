@@ -1,6 +1,6 @@
 <template>
   
-  <div>
+  <div id="expenses">
     <ReusableHeader/>
     <WeekGraph/>
     <MonthlyTotal/>
@@ -15,3 +15,24 @@
   import MonthlyTotal from './MonthlyTotal.vue';
 
 </script>
+
+<style>
+
+  #expenses {
+    width: 100%;
+    height: 75%;
+
+    background-color: hsl(33, 100%, 98%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+
+  #expenses > * {
+    width: 90%;
+  }
+
+</style>
