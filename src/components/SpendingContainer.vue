@@ -1,7 +1,7 @@
 <template>
   
   <div id="expenses">
-    <ReusableHeader/>
+    <ReusableHeader msg="Spending - Last 7 days" />
     <WeekGraph/>
     <MonthlyTotal/>
   </div>
