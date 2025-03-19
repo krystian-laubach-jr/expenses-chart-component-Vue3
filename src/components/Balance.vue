@@ -1,7 +1,14 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
 
-	<div id="balance"></div>
+	<div id="balance">
+		<div>
+			<p>My balance</p>
+			<h2>$921.48</h2>
+		</div>
+
+		<img src="src/assets/logo.svg">
+	</div>
 
 </template>
 
