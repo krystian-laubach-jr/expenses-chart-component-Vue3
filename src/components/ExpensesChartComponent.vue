@@ -26,6 +26,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(25, 47%, 15%);
   }
 
   #container > *{
