@@ -9,27 +9,20 @@
 </template>
 
 <script setup>
-
+  import { ref } from 'vue';
   import GraphBar from './GraphBar.vue';
+  import { data } from '@/data/data'
 
-  const rawData = [
-    { weekDay: 'mon', amount: 594 },
-    { weekDay: 'tue', amount: 556 },
-    { weekDay: 'wed', amount: 998 },
-    { weekDay: 'thu', amount: 768 },
-    { weekDay: 'fri', amount: 598 },
-    { weekDay: 'sat', amount: 492 },
-    { weekDay: 'sun', amount: 617 }
-  ];
+ let rawData = ref(data);
 
   const getBiggestExpenses = (rawData) => {
-    return Math.max(...rawData.map(day => day.amount));
+    return Math.max(...rawData.value.map(day => day.amount));
   }
 
   const calculateWeekData = (rawData) => {
     let biggestExpenses = getBiggestExpenses(rawData);
 
-    return rawData.map(day => ({
+    return rawData.value.map(day => ({
       ...day,
       pillarType: (day.amount === biggestExpenses) ? "largest pillar" : "pillar",
       height: `${(day.amount / biggestExpenses) * 60}%`
@@ -38,7 +31,6 @@
   };
 
   const calculatedWeekData = calculateWeekData(rawData)
-
 </script>
 
 <style>
