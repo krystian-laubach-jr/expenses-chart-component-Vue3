@@ -7,10 +7,14 @@
 			<h2>$921.48</h2>
 		</div>
 
-		<img src="src/assets/logo.svg">
+		<img :src="logo" alt="logo">
 	</div>
 
 </template>
+
+<script setup>
+	import logo from '@/assets/logo.svg';
+</script>
 
 <style>
 	#balance {
