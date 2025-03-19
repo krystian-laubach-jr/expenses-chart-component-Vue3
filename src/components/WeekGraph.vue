@@ -2,7 +2,7 @@
   
 <div id="graph">
 
-  <GraphBar v-for="(data, index) in weekData" :key="index" :barData="data" />
+  <GraphBar v-for="(data, index) in calculatedWeekData" :key="index" :barData="data" />
 
 </div>
   
@@ -12,15 +12,32 @@
 
   import GraphBar from './GraphBar.vue';
 
-  const weekData = [
-    { weekDay: 'mon', pillarType: 'pillar',         height: '24%', amount: 594 },
-    { weekDay: 'tue', pillarType: 'pillar',         height: '52%', amount: 556 },
-    { weekDay: 'wed', pillarType: 'pillar',         height: '38%', amount: 698 },
-    { weekDay: 'thu', pillarType: 'largest pillar', height: '28%', amount: 764 },
-    { weekDay: 'fri', pillarType: 'pillar',         height: '62%', amount: 598 },
-    { weekDay: 'sat', pillarType: 'pillar',         height: '10%', amount: 392 },
-    { weekDay: 'sun', pillarType: 'pillar',         height: '23%', amount: 617 }
+  const rawData = [
+    { weekDay: 'mon', amount: 594 },
+    { weekDay: 'tue', amount: 556 },
+    { weekDay: 'wed', amount: 998 },
+    { weekDay: 'thu', amount: 768 },
+    { weekDay: 'fri', amount: 598 },
+    { weekDay: 'sat', amount: 492 },
+    { weekDay: 'sun', amount: 617 }
   ];
+
+  const getBiggestExpenses = (rawData) => {
+    return Math.max(...rawData.map(day => day.amount));
+  }
+
+  const calculateWeekData = (rawData) => {
+    let biggestExpenses = getBiggestExpenses(rawData);
+
+    return rawData.map(day => ({
+      ...day,
+      pillarType: (day.amount === biggestExpenses) ? "largest pillar" : "pillar",
+      height: `${(day.amount / biggestExpenses) * 60}%`
+    }));
+
+  };
+
+  const calculatedWeekData = calculateWeekData(rawData)
 
 </script>
 

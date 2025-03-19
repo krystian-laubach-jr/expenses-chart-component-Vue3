@@ -4,7 +4,7 @@
 
     <p>{{ barData.weekDay }}</p>
     <div :class="barData.pillarType" :style="{ height: barData.height }" ></div>
-    <div class="amount"><p>{{ barData.amount }}</p></div>
+    <div class="amount"><p>${{ barData.amount }}</p></div>
   </div>
   
 </template>
