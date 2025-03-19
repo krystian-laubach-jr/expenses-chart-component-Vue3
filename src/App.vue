@@ -23,6 +23,8 @@
     width: 100vw;
     height: 100vh;
 
+    background-color: hsl(27, 66%, 92%);
+
     display: flex;
     align-items: center;
     justify-content: center;
